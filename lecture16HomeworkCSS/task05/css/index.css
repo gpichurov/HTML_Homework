@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+
+main{
+	width: 600px;
+	margin: 0 auto;
+}
+
+header {
+	background-color: CornflowerBlue ;
+	font-weight: bold;
+	font-size: 140%;
+	color: white;
+	padding:  0.2em 0.5em;
+}
+
+#content{
+	width: 95%;
+	margin: 1em auto;
+}
+
+#title {
+	font-weight: bold;
+	padding: 0.2em;
+}
+
+section {
+	border: 1px solid green;
+	margin: 1em auto;
+}
+
+.titles {
+	color: white;
+	font-weight: bold;
+	background-color: green;
+	padding: 0.2em;
+}
+
+.text {
+	background-color: LightYellow ;
+	padding: 0.2em;
+	
+}
+
+.date {
+	background-color: LightYellow ;
+	color: gray;
+	font-size: 85%;
+	padding: 0.2em;
+}
+
+.link {
+	background-color: LightYellow ;
+	color: gray;
+	font-size: 85%;
+	padding: 0.2em;
+}

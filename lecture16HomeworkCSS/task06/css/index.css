@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+main {
+	width: 1000px;
+	margin: 0 auto;
+}
+header {
+	width: 100%;
+	background-color: Sienna ;
+}
+
+#content {
+	width: 100%;
+	height: 300px;
+}
+#left-aside {
+	float: left;
+	height: 300px;
+	width: 20%;
+	background-color: DarkRed ;
+	
+}
+#right-aside {
+	float: left;
+	height: 300px;
+	width: 20%;
+	background-color: DarkOliveGreen ;
+	
+}
+section {
+	float: left;
+	width: 60%;
+	background-color: LightYellow;
+}
+footer {
+	width: 100%;
+	height: 20px;
+	background-color: grey;
+}
