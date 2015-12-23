@@ -37,14 +37,21 @@
 				</tr>
 				<tr>
 					<td>
-						<label for="title_of_courtesy">Title of Courtesy:</label>
+						<p>Title of Courtesy:<p>
 					</td>
 					<td>
 						<p>
-							<input type="radio" id="title_of_courtesy" value="Dr." name="title_of_courtesy" />Dr.
-							<input type="radio" id="title_of_courtesy" value="Mr." name="title_of_courtesy" />Mr.
-							<input type="radio" id="title_of_courtesy" value="Mrs." name="title_of_courtesy" />Mrs.
-							<input type="radio" id="title_of_courtesy" value="Ms." name="title_of_courtesy" />Ms.
+							<input type="radio" id="dr" value="Dr." name="title_of_courtesy" />
+							<label for="dr">Dr.</label>
+
+							<input type="radio" id="mr" value="Mr." name="title_of_courtesy" />
+							<label for="mr">Mr.</label>
+
+							<input type="radio" id="mrs" value="Mrs." name="title_of_courtesy" />
+							<label for="mrs">Mrs.</label>
+
+							<input type="radio" id="ms" value="Ms." name="title_of_courtesy" />
+							<label for="ms">Ms.</label>
 						</p>
 					</td>
 				</tr>
@@ -53,7 +60,7 @@
 						<label for="birth_date">Birth date:</label>
 					</td>
 					<td>
-						<select  id="birth_date_mounth" name="birth_date_mounth" >		
+						<select  id="birth_date_month" name="birth_date_month" >
 	                        <option value="1">January</option>
 	                        <option value="2">February</option>
 	                        <option value="3">March</option>
@@ -225,7 +232,7 @@
 						<label for="hire_date">Hire date:</label>
 					</td>
 					<td>
-						<select  id="hire_date_mounth" name="hire_date_mounth" >		
+						<select  id="hire_date_month" name="hire_date_month" >
 	                        <option value="1">January</option>
 	                        <option value="2">February</option>
 	                        <option value="3">March</option>
@@ -452,7 +459,7 @@
 					<td colspan="2">
 						<label for="message">Message:</label>
 						<br />
-						<textarea rows="5" cols="55" name="message"></textarea>
+						<textarea rows="5" cols="55" id="message" name="message"></textarea>
 					</td>
 				</tr>
 				<tr>
