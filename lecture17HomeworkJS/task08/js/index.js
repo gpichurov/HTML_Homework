@@ -9,15 +9,15 @@ function insert() {
 
     var newRow   = tableRef.insertRow(tableRef.rows.length);
 
-    var newCell  = newRow.insertCell(0);
-    var newText  = document.createTextNode('First Name')
-    newCell.appendChild(newText);
+    var newCell1  = newRow.insertCell(0);
+    var newText1  = document.createTextNode('First Name')
+    newCell1.appendChild(newText1);
 
-    var newCell  = newRow.insertCell(1);
-    var newText  = document.createTextNode('Last Name')
-    newCell.appendChild(newText);
+    var newCell2  = newRow.insertCell(1);
+    var newText2  = document.createTextNode('Last Name')
+    newCell2.appendChild(newText2);
 
-    var newCell  = newRow.insertCell(2);
-    var newText  = document.createTextNode('Age')
-    newCell.appendChild(newText);
-};
+    var newCell3  = newRow.insertCell(2);
+    var newText3  = document.createTextNode('Age')
+    newCell3.appendChild(newText3);
+}
