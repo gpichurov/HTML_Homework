@@ -1,22 +1,20 @@
-var shots = -1;
-var shotBottom = [];
-var shotLeft = [];
+
 document.addEventListener('keydown', function(event) {
     if (event.keyCode == 32){
-        shots++;
+
         var body = document.getElementsByTagName('body');
         var newShot = document.createElement('div');
         body[0].appendChild(newShot);
         newShot.className = 'shot';
 
-        shotBottom[shots] = shipBottom + 55;
-        shotLeft[shots] = shipLeft + 24;
-        newShot.style.left = shotLeft[shots] + 'px';
-        newShot.style.bottom = shotBottom[shots] + 'px';
+        var shotBottom = shipBottom + 55;
+        var shotLeft = shipLeft + 24;
+        newShot.style.left = shotLeft + 'px';
+        newShot.style.bottom = shotBottom + 'px';
 
         function shotMove() {
-            shotBottom[shots] += 3;
-            newShot.style.bottom = shotBottom[shots] + 'px';
+            shotBottom += 3;
+            newShot.style.bottom = shotBottom + 'px';
         }
 
         (function updateState() {
