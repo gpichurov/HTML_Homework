@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+body {
+	font-size: 15px;
+}
+
+#paragraph-1 {
+	color: blue;
+	font-family: 'Arial', Heevetica sans-serif;
+}
+
+.bold {
+	font-weight: normal;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.box > p {
+	text-decoration: underline;
+}
+
+.bold, .italic {
+	color: orange;
+}
+
+.upper-case {
+	text-transform: uppercase;
+}
+
+.handwriting {
+	font-family: 'Permanent Marker', cursive;
+}
+
+#paragraph-3 {
+	text-align: justify;
+}
+
+.hint span {
+	border: 1px solid red;
+}

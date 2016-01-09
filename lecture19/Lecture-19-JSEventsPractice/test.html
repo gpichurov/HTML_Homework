@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	.test {
+		width: 100px;
+		height: 100px;
+		background: red;
+		animation: hide 5s infinite;
+	}
+	
+	 @keyframes hide {
+	 	from { height: 100px; }
+	 	to { height: 0px; }
+	 }
+	 
+	  @-webkit-keyframe hide {
+	 	from { height: 100px; }
+	 	to { height: 0px; }
+	 }
+		 
+	  @keyframe show {
+	 	from {height: 0%; }
+	 	to { height: 100%; }
+	 }
+	
+</style>
+</head>
+<body>
+	<div class="test"></div>
+</body>
+</html>

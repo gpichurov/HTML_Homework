@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	
+	#box{
+		width: 200px;
+		height: 200px;
+		
+		background: red;
+	}
+	
+	#box-container {
+		
+		padding: 0.8em;
+		border: 1px solid red;
+		width: 200px;
+		height: 200px;
+	
+	}
+
+</style>
+
+<script type="text/javascript">
+
+function getColor(id) {
+	var color;
+	switch (id) {
+		case 'btn-1' :
+			color = 'blue';
+			break;
+		case 'btn-2':
+			color = 'green';
+			break;
+		case 'btn-3':
+			color = 'red';
+			break;
+	}
+	
+	return color;
+}
+	
+	window.addEventListener('DOMContentLoaded', function() {
+		
+			var box = document.getElementById('box')
+			var boxContainer = document.getElementById('box-container');
+			box.addEventListener('click', function(event) {
+				
+				if (event.target.tagName.toLowerCase() == 'a') {
+					
+					if (!confirm('Do you realy want to redirect ?')) {
+						event.preventDefault();
+					}
+					
+				}
+				
+				color = getColor(event.target.id);
+				
+				if (color == 'red') {
+					event.stopPropagation();
+				}
+				
+				if (color) {
+					// this === box
+					//  event.currentTarget
+					this.style.backgroundColor = color;
+				}
+				
+			}, false);
+			
+			boxContainer.addEventListener('click', function(event) {
+				console.log('div#box-container clicked');
+				color = getColor(event.target.id);
+				if (color) {
+					this.style.borderColor = color;
+				}
+			})
+			
+			box.innerHTML = '<button type="button" id="btn-1">Make me blue</button>' + 
+							'<button type="button" id="btn-2">Make me green</button>' +
+							'<button type="button" id="btn-3">Make me red</button>' +
+							'<a href="http://ittalents.bg">Redrect me</a>' ;
+	}, false)
+
+</script>
+</head>
+<body >
+
+	<div id="box-container">
+		<div id="box">
+	
+		</div>
+	</div>
+		
+</body>
+</html>

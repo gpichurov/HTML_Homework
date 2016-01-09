@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background: #78A3D6;
+				overflow: hidden;
+			}
+			
+			.stage {
+				position: absolute;
+				background: url(assets/images/clouds.fw.png);
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+				border: 1px solid red;
+			}
+			
+			#plane{
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background: url(assets/images/v2_101x75.png) no-repeat;
+				width: 101px;
+				height: 75px;
+				margin: 0;
+				z-index: 2;
+			}
+			
+			.stage.first {
+				-webkit-animation: hide 5s infinite;
+				animation: hide 5s infinite;
+			}
+			
+			/* .stage.second {
+				height: 0%;
+				-webkit-animation: show 5s infinite;
+				animation: show 5s infinite;
+			} */
+			
+		
+		 @keyframes hide {
+		 	0% { top: 0%; }
+		 	50% { top: 100%; }
+		 	100% {top: 0%;}
+		 }
+		 
+		  @keyframes show {
+		 	from {height: 0%; }
+		 	to { height: 100%; }
+		 }
+		</style>
+		
+		<script type="text/javascript" src="assets/js/plane.js">
+		</script>
+	</head>
+	<body>
+		<div class="stage first"></div>
+		<div class="stage second"></div>
+		<div id="plane"></div>
+	</body>
+</html>

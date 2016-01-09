@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+main {
+	width: 1200px;
+	margin: 0 auto;
+}
+header {
+	height: 100px;
+	width: 100%;
+	background-color: teal;
+}
+
+section {
+	height: 150px;
+	width: 90%;
+	background-color: green;
+	margin: 5px auto;
+}
+
+footer {
+	width: 90%;
+	height: 33px;
+	margin: 5px auto;
+}
+#left-footer {
+	float: left;
+	height: 33px;
+	width: 48%;
+	background-color: purple;
+}
+#right-footer {
+	float: right;
+	height: 33px;
+	width: 48%;
+	background-color: blue;
+}

@@ -1,0 +1,133 @@
+body{
+    background: #262626;
+    color: #ffffff;
+    text-align: center;
+}
+body h1{
+    font-weight: bold;
+    font-size: 200%;
+}
+header h1 {
+    display: inline-block;
+    font-size: 300%;
+    padding: 0.5em;
+}
+header {
+    padding: 1em;
+    text-align: left;
+}
+#menu {
+    float: right;
+}
+#menu > li{
+    float: left;
+    padding: 0 0 0 2em;
+}
+nav {
+    background-color: #ff0066;
+}
+nav > ul > li {
+    display: inline-block;
+    padding: 2em 1em;
+}
+#home {
+    background-image: url("../images/home.jpg");
+    height: 500px;
+    background-position: center;
+}
+#home div {
+    padding: 10em;
+}
+
+#home p {
+    padding: 2em;
+}
+#home button {
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 15px 40px;
+    background-color: Transparent;
+}
+#genre {
+    background-image: url("../images/genre.jpg");
+    background-position: center;
+    padding: 3em;
+}
+#genre h1{
+    padding: 1em;
+}
+#genre p {
+    padding: 1em 5em;
+}
+#genre button {
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 15px 40px;
+    background-color: transparent;
+    display: block;
+    margin: 0 auto;
+}
+#genre form {
+    display: inline-block;
+    text-align: left;
+}
+#genre input {
+    margin: 0.5em;
+}
+#genre div {
+    display: inline-block;
+    padding: 2em;
+    vertical-align: top;
+}
+#more_movies {
+    padding: 2em ;
+}
+#more_movies div {
+    display: inline-block;
+    padding: 3em;
+}
+#more_movies button {
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 15px 40px;
+    background-color: transparent;
+    display: block;
+    margin: 0 auto;
+}
+#more_movies p {
+    margin: 0.5em;
+}
+#comment {
+    background-color: #ff0066;
+}
+#comment img {
+    width: 20em;
+    height: 20em;
+    border-radius: 20em;
+}
+#comment h1, p {
+    padding: 1em;
+}
+#contact {
+    padding: 1em;
+}
+#contact button {
+    color: white;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 15px 40px;
+    background-color: transparent;
+    display: block;
+    margin: 0 auto;
+}
+#comment label, input, textarea {
+    margin: 1em;
+    background-color: #262626;
+    color: white;
+}
+#googleMap {
+    height: 500px;
+}

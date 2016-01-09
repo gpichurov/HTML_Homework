@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+#float-container {
+	border: 1px solid red;	
+	display: inline-block;
+	clear: both;
+}
+
+#float-container div {
+	border: 1px solid grey;
+	width: 200px;
+	height: 100px;
+	float:left;
+	
+}
+
+#div-3 {
+	border: 1px solid red;	
+	height: 100px;
+	width: 200px;
+}
+
+#article {
+	width: 400px;
+}
+
+#article img {
+	float: left;
+	margin-right: 10px; 
+}
+
+#spaceship {
+	width: 200px;
+	height: 200px;
+	background-color: #ff0000;
+	background-image: url(../images/enterprise-tos.jpg);
+	background-position: center center;
+}
+
+
+#pica {
+	width: 500px;
+	height: 300px;
+	background-image: url(../images/250px-025Pikachu.png);
+	background-repeat:repeat-y;
+}

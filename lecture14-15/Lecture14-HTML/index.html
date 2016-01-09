@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		
+		<div id="text">
+			<h1>I am <em>text</em> title</h1>
+			
+			<hr>
+			
+			<p>I am a <strong>pragraph</strong> dasdadsasad adsadsadsadsa asdasdsaasasdsa I am a pragraph dasdadsasad adsadsadsadsa asdasdsaasasdsa</p>
+			<p>I am a pragraph</p>
+			<p>I am a pragraph</p>
+			<p>I am a pragraph</p>
+			<p>c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup></p>
+			
+			<p>C<sub>2</sub>HO<sub>5</sub>OH</p>
+			<p>Price: <strike>5</strike>4BGN</p>
+		</div>  
+			<span>Text</span>
+		
+			<ul>
+				<li>bread</li>
+				<li>milk</li>
+				<li>cheese</li>
+			</ul> 	
+			
+			<ol>
+				<li>bread</li>
+				<li>milk</li>
+				<li>cheese</li>
+			</ol> 	
+		
+		<!-- table -->
+			<table border="1" width="100%">
+				<caption>Table with fruits</caption>
+				<thead>
+					<tr>
+						<th>Number</th>
+						<th>Name</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td align="right">1</td>
+						<td>Orange</td>
+						<td align="right">$5</td>
+					</tr>
+					<tr>
+						<td align="right">2</td>
+						<td>Banana</td>
+						<td align="right">$4</td>
+					</tr>
+					<tr>
+						<td align="right">3</td>
+						<td>Mango</td>
+						<td align="right">$7</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>Total</td>
+						<td colspan="2" align="right" rowspan="2">$16</td>
+					</tr>
+					<tr>
+						<td>Amount</td>
+					</tr>
+				</tfoot>
+			</table>	
+			<div>
+			<br>
+			<br>
+				<form action="" method="get">
+					<fieldset>
+						<legend>Data for Person</legend>
+						
+						<div>
+							<label for="first-name">First Name</label>
+							<input type="text" id="first-name" name="first_name" placeholder="First Name">
+						</div>
+						<br>
+						<div>
+							<label for="last-name">Last Name</label>
+							<input type="text" id="last-name" value="Ivanov" name="last_name">
+						</div>
+						<br>
+						<div>
+							<span>Gender</span>
+							
+							<label for="gender_male">Male</label>
+							<input type="radio" id="gender_male" value="male" name="gender" checked="checked">
+							
+							<label for="gender_female">Female</label>
+							<input type="radio" id="gender_female" value="female" name="gender">
+						</div>
+						<br>
+						<div>
+							<span>Languages</span>
+							
+							<label for="lng_bg">Bulgarian</label>
+							<input type="checkbox" id="lng_bg" value="bg" name="lng">
+							<label for="lng_en">English</label>
+							<input type="checkbox" id="lng_en" value="en" name="lng">
+							<label for="lng_es">Espaniol</label>
+							<input type="checkbox" id="lng_es" value="es" name="lng">
+						</div>
+						<br>
+						<div>
+							<label for="form_of_address">Form Of Address</label>
+							<select id="form_of_address" name="form_of_address">
+								<option value="1">Mr.</option>
+								<option value="2">Mrs.</option>
+								<option value="3" selected="selected">Ms.</option>
+							</select>
+						</div>
+						<br>
+						
+						<div>
+							<label for="message">Message</label>
+							<textarea rows="10" cols="25" name="message">Some Text</textarea>
+						</div>
+						
+						<br>
+						<div>
+							<!-- <input type="submit" value="Submit The Form" />
+							<input type="reset" value="Reset The Form" />
+							
+							<input type="button" value="Click Me" /> -->
+							<button type="button">Click Me</button>
+							<button type="submit">Submit The Form</button>
+							<button type="reset">Reset The Form</button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			
+			<a href="new_page2.html" target="_blank">Google</a>
+			<a href="new_page.html" target="_blank">Google</a>
+			<a href="#text">Text</a>
+			<img width="300" height="200" src="enterprise-tos.jpg"/>
+	</body>
+</html>
