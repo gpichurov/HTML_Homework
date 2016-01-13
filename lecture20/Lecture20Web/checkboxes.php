@@ -16,7 +16,7 @@
 			<div>
 				<label>Red <input type="checkbox" name="color[]" value="red"></label>
 				<label>Green <input type="checkbox" name="color[]" value="green"></label>
-				<label>Yello <input type="checkbox" name="color[]" value="yello"></label>
+				<label>Yellow <input type="checkbox" name="color[]" value="yellow"></label>
 			</div>
 			<div>
 				<input type="submit" />

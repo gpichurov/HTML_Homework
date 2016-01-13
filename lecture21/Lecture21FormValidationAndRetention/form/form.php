@@ -10,8 +10,8 @@
 	define('FORM_OF_ADDRESS_MS', 3);
 	
 	$validationErrors = [];
-	$firstName = getValue($_POST, 'firstname');
-	$lastName = getValue($_POST, 'lastname');
+	$firstName = getValue($_POST, 'firstName');
+	$lastName = getValue($_POST, 'lastName');
 	$username = getValue($_POST, 'username');
 	$password = getValue($_POST, 'password');
 	$gender = getValue($_POST, 'gender');
@@ -25,15 +25,15 @@
 		$errors = [];
 		
 		if (!validateRequired($firstName)) {
-			$errors['firstname'][] = 'First Name is required';
+			$errors['firstName'][] = 'First Name is required';
 		} else if(!validateLongerOrEqualString($firstName, 2)) {
-			$errors['firstname'][] = 'First Name must be at least 2 characters long';
+			$errors['firstName'][] = 'First Name must be at least 2 characters long';
 		}
 		
 		if (!validateRequired($lastName)) {
-			$errors['lastname'][] = 'Last Name is required';
+			$errors['lastName'][] = 'Last Name is required';
 		} else if(!validateLongerOrEqualString($lastName, 2)) {
-			$errors['lastname'][] = 'Last Name must be at least 2 characters long';
+			$errors['lastName'][] = 'Last Name must be at least 2 characters long';
 		}
 		
 		if (!validateRequired($username)) {

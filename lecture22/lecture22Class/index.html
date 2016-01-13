@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/ajax.js"></script>
+</head>
+<body>
+    <form action="" onsubmit="return false">
+        <label for=""><input type="radio" name="active" value="1">All</label>
+        <label for=""><input type="radio" name="active" value="1">Active</label>
+        <label for=""><input type="radio" name="active" value="0">Not Active</label>
+        <button id="start"  >Search</button>
+    </form>
+    <div id="result"></div>
+</body>
+    <script type="text/javascript">
+        function  displayEmployees(container, data){
+            if (data.employees && data. employees.length){
+                var list = document.createElement('ul');
+                for (var i = 0; i < data.employees.length; i++){
+                    var li = document.createElement('li');
+                    var employee = data.employees[i];
+                    li.innerHTML = employee.firstName + ' ' + employee.lastName;
+                    list.appendChild(li);
+                }
+                container.appendChild(list);
+            }
+        }
+
+        var callback = function (xhr){
+            var employees = JSON.parse(xhr.responseText);
+            document.getElementById('result').innerHTML = xhr.responseText;
+            console.log(employees);
+            displayEmployees(document.getElementById('result'), employees);
+        };
+        ajax.makeRequest('GET', 'server.php', {}, true, callback);
+        document.getElementById('result').innerHTML = 'Ajax request is pending';
+
+        document.getElementById('start').addEventListener('click', function (){
+            var params = {
+                active: 'all'
+            };
+            var checked = document.querySelector('input[type=radio]:checked');
+            if (checked){
+                params.active = checked.value;
+            }
+            document.getElementById('result').innerHTML = 'Ajax request is pending';
+            ajax.makeRequest('GET', 'server.php', params, true, callback);
+        }, false);
+    </script>
+</html>

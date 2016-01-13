@@ -12,7 +12,7 @@ $password = get_value($_POST, 'password');
 
 ?>
 <p>
-	Hello <?= $firstName . ' ' . $lastname ?> your username is <?= $username?>
+	Hello <?= $firstName . ' ' . $lastName ?> your username is <?= $username?>
 </p>
 <?php if ($firstName) :?>
 	<p>Your first name is <?= $firstName?></p>

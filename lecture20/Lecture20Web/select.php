@@ -14,9 +14,9 @@
 			<div>
 				<label>Select Color</label>
 				<select name="color">
-					<option value="1">Red</option>
+					<option >Red</option>
 					<option value="2">Green</option>
-					<option value="3">Yello</option>
+					<option value="3">Yellow</option>
 				</select>
 			</div>
 			<div>
