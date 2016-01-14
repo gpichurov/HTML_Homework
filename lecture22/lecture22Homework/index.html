@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Ajax.js"></script>
+    <style type="text/css">
+        li {
+            margin: 2em;
+        }
+        ul {
+            -moz-column-count: 2;
+            -moz-column-gap: 20px;
+            -webkit-column-count: 2;
+            -webkit-column-gap: 20px;
+            column-count: 2;
+            column-gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+</body>
+<script type="text/javascript">
+
+    var id = [];
+    var linkClick = '';
+    var flack = [];
+
+    function displayPeople(container, data) {
+        if (data.people && data.people.length) {
+            var list = document.createElement('ul');
+            for (var i = 0; i < data.people.length; i++) {
+                var li = document.createElement('li');
+                var people = data.people[i];
+                if ((people.name === linkClick) || (flack[i])){
+                    li.innerHTML = '<a href="#" onclick="moreInfo(' + i + ')">' + people.name + '</a>' +
+                            '<br />' + '<img src="' + people.picture + '">' + '<br />' + people.job + '<br />' +
+                            people.birthDate + '<br />' + people.gender;
+                    list.appendChild(li);
+                } else {
+                    id [i] = people.name;
+                    li.innerHTML = '<a href="#" onclick="moreInfo(' + i + ')">' + people.name + '</a>' +
+                            '<br />' + '<img src="' + people.picture + '">';
+                    list.appendChild(li);
+                }
+            }
+
+            container.appendChild(list);
+        }
+    }
+
+    var callback = function (xhr) {
+        var people = JSON.parse(xhr.responseText);
+        document.getElementById('result').innerHTML = '';
+        displayPeople(document.getElementById('result'), people)
+    };
+    Ajax.makeRequest('POST', 'server.php', {}, true, callback);
+
+    function moreInfo(ids) {
+        linkClick = id [ids];
+        Ajax.makeRequest('POST', 'server.php', {}, true, callback);
+    }
+
+</script>
+</html>
