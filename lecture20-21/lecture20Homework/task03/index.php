@@ -28,7 +28,7 @@ if ($operation == 2) {
 <form action="" method="post">
     <div>
         <label for="temperature">Temperature</label>
-        <input type="number" id="temperature" name="temperature">
+        <input type="number" id="temperature" name="temperature" value="<?= htmlentities($temperature)?>">
     </div>
     <br>
     <div>

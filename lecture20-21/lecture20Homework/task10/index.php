@@ -5,16 +5,52 @@
 <!--човече се беси. Да се има възможност за започване от начало и за-->
 <!--генериране на нови думи при рестарт.-->
 <?php
+
+
+
 $points = 6;
-$words = ['adsqwdwef', 'wefwefqwfw', 'wefwef'];
-shuffle($words);
-$wordNow = $words[0];
+//$words = ['adsqwdwef', 'wefwefqwfw', 'wefwef'];
+//shuffle($words);
+
+
+session_start();
+//if (!isset($_SESSION['word'])){
+//}
+$_SESSION['word'] = 'theword';
+$wordNow = $_SESSION['word'];
+
 $len = strlen($wordNow);
-$result = '';
+$_SESSION['result'] = '';
 while ($len > 0){
-    $result .= '_ ';
+    $sameChars [] = false;
+    $_SESSION['result'] .= '_ ';
     $len--;
 }
+
+$flack = false;
+$sameChars = [];
+if (!isset($_POST)){
+    $char = $_POST['char'];
+    for($i = 0; $i < strlen($wordNow); $i++){
+        if ($char === $wordNow{$i}){
+            $flack = true;
+            $sameChars [$i] = 1;
+        }
+    }
+    if ($flack){
+        for($j = 0; $j < strlen($wordNow); $j++){
+            if ($sameChars[$j]){
+                $_SESSION['result']{$j * 2} = $char;
+                $sameChars [$j] = false;
+            }
+        }
+    } else {
+        $points--;
+    }
+    $flack = false;
+}
+
+var_dump($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +70,7 @@ while ($len > 0){
     </div>
     <br>
 </form>
-<?= $result?>
+<?= $_SESSION['result']?>
 <br>
 <?= $points?>
 </body>
