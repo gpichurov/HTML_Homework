@@ -25,7 +25,7 @@
 
     var id = [];
     var linkClick = '';
-    var flack = [];
+    //var flack = [];
 
     function displayPeople(container, data) {
         if (data.people && data.people.length) {
@@ -33,7 +33,7 @@
             for (var i = 0; i < data.people.length; i++) {
                 var li = document.createElement('li');
                 var people = data.people[i];
-                if ((people.name === linkClick) || (flack[i])){
+                if (people.name === linkClick){
                     li.innerHTML = '<a href="#" onclick="moreInfo(' + i + ')">' + people.name + '</a>' +
                             '<br />' + '<img src="' + people.picture + '">' + '<br />' + people.job + '<br />' +
                             people.birthDate + '<br />' + people.gender;
