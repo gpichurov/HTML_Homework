@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Ajax.js"></script>
+    <link rel="stylesheet" href="reset.css" type="text/css">
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="playingSong">
+        <div id="image">
+            <img src="" id="showingImage">
+        </div>
+        <div id="info">
+            <p id="name"></p>
+            <div id="bar"></div>
+            <div id="menu">
+                <p id="timePlaying">00:00</p>
+                <button type="button" class="fa fa-play-circle-o fa-3x" id="button"></button>
+                <p id="songLength">00:00</p>
+            </div>
+        </div>
+    </div>
+    <audio src="" id="myAudio"></audio>
+    <div id="result"></div>
+    <!--<i class="fa fa-play-circle-o fa-3x"></i>-->
+    <!--<i class="fa fa-pause-circle-o fa-3x"></i>-->
+    <!--<i class="fa fa-step-backward fa-3x"></i>-->
+    <!--<i class="fa fa-step-forward fa-3x"></i>-->
+
+</body>
+
+<script type="text/javascript">
+    var songsLink = [];
+    var imagesLink = [];
+    var artistName = [];
+    var albumName = [];
+    function  displaySongs(container, data){
+        if (data && data.length){
+            var list = document.createElement('ul');
+            for (var i = 0; i < data.length; i++){
+                var li = document.createElement('li');
+                var songs = data[i];
+                songsLink [i] = songs.path;
+                imagesLink [i] = songs.image;
+                artistName [i] = songs.artist;
+                albumName [i] = songs.album;
+                var songNumber = i + 1;
+                li.innerHTML = '<p>' + songNumber + '. ' + songs.artist + ' - ' + songs.song + '</p> <button id="' + i +
+                        '" onclick="buttonClick(' + i + ')"></button>';
+                list.appendChild(li);
+            }
+            container.appendChild(list);
+
+            for (var i = 0; i <= data.length; i++){
+                document.getElementById(i).className = "fa fa-play-circle-o fa-3x";
+            }
+        }
+    }
+
+    var callback = function (xhr) {
+        var songs = JSON.parse(xhr.responseText);
+        document.getElementById('result').innerHTML = '';
+        displaySongs(document.getElementById('result'), songs)
+    };
+
+    function buttonClick(songId){
+        if (document.getElementById(songId).className === "fa fa-play-circle-o fa-3x"){
+            document.getElementById(songId).className = "fa fa-pause-circle-o fa-3x";
+            for (var i = 0; i < 9; i++ ){
+                if (i != songId){
+                    document.getElementById(i).className = "fa fa-play-circle-o fa-3x";
+                }
+            }
+            playSong(songId);
+        } else if (document.getElementById(songId).className === "fa fa-pause-circle-o fa-3x"){
+            document.getElementById(songId).className = "fa fa-play-circle-o fa-3x";
+            pauseSong();
+        }
+    }
+    
+    function playSong(songId){
+        var songName = 'songs/' + songsLink[songId];
+        document.getElementById('myAudio').src = songName ;
+        document.getElementById('myAudio').play();
+
+        var imgName = 'images/' + imagesLink[songId];
+        document.getElementById('showingImage').src = imgName;
+        document.getElementById('myAudio').addEventListener("loadeddata", function() {
+            document.getElementById('songLength').innerHTML = this.duration;
+        });
+
+        var title = artistName[songId] + ' - ' + albumName[songId];
+        document.getElementById('name').innerHTML = title;
+    }
+    
+    function  pauseSong(){
+        document.getElementById('myAudio').pause();
+    }
+    Ajax.makeRequest('POST', 'server.php', {}, true, callback);
+
+</script>
+
+</html>

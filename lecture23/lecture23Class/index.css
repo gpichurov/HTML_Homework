@@ -1,0 +1,74 @@
+ul {
+    margin: 0 auto;
+    width: 70%;
+    border: 1px solid dimgray;
+}
+
+li {
+    padding: 1.5em;
+    border: 1px solid dimgray;
+    position: relative;
+}
+ul > li > p {
+    display: inline;
+    text-align: left;
+}
+button {
+    background-color: white;
+    border: none;
+}
+ul > li > button {
+    display: inline;
+    position: absolute;
+    right: 0px;
+    top: 0em;
+    bottom: 0em;
+
+}
+#playingSong {
+    height: 420px;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid deepskyblue;
+}
+#image {
+    height: 70%;
+    background-color: dimgray;
+}
+#showingImage {
+    height: 100%;
+    display: table;
+    margin: 0 auto;
+}
+#info {
+    height: 30%;
+}
+#name {
+    height: 40%;
+    font-size: 2em;
+    color: deepskyblue;
+}
+#bar {
+    height: 20%;
+    background-color: deepskyblue;
+}
+#menu {
+    height: 40%;
+    text-align:center;
+}
+#timePlaying {
+    font-size: 2em;
+    color: deepskyblue;
+    float: left;
+    vertical-align: middle;
+}
+
+#songLength{
+    font-size: 2em;
+    color: deepskyblue;
+    float: right;
+    vertical-align: middle;
+}
+#button {
+    margin: 0 auto;
+}
