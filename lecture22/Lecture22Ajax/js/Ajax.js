@@ -20,7 +20,6 @@ var Ajax = {
 			throw new Error('Your browser does not support AJAX');
 		},
 		/**
-		 * 
 		 * @param method- GET, POST
 		 * @param url - where we are sending the request
 		 * @param params - {username: 'ásSA', password: 'dadsdas'} -> username=ásSA&password=dadsdas

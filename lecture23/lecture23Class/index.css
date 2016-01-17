@@ -1,6 +1,10 @@
+main {
+    width: 80%;
+    margin: 0 auto;
+}
 ul {
     margin: 0 auto;
-    width: 70%;
+    width: 90%;
     border: 1px solid dimgray;
 }
 
@@ -27,8 +31,7 @@ ul > li > button {
 }
 #playingSong {
     height: 420px;
-    width: 80%;
-    margin: 0 auto;
+    margin: 2em;
     border: 1px solid deepskyblue;
 }
 #image {

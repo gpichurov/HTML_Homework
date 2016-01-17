@@ -53,14 +53,17 @@
     var callback = function (xhr) {
         var people = JSON.parse(xhr.responseText);
         document.getElementById('result').innerHTML = '';
-        displayPeople(document.getElementById('result'), people)
+        displayPeople(document.getElementById('result'), people);
+
+        window.sessionStorage.mySession =  JSON.stringify(people.people);
+        setTimeout(function(){window.sessionStorage.removeItem('mySession')},30000);
     };
+
     Ajax.makeRequest('POST', 'server.php', {}, true, callback);
 
     function moreInfo(ids) {
         linkClick = id [ids];
         Ajax.makeRequest('POST', 'server.php', {}, true, callback);
     }
-
 </script>
 </html>
