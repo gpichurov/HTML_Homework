@@ -1,0 +1,47 @@
+main{
+    margin: 0 auto;
+    color: black;
+    text-align: center;
+    width: 60%;
+}
+
+h1 {
+    font-size: 2em;
+    padding: 0.2em;
+}
+
+#firstPage {
+    padding: 0.8em;
+    margin: 0.8em;
+    background-color: #ffffb3;
+    box-shadow: 10px 10px 5px #888888;
+}
+#secondPage {
+    padding: 0.8em;
+    margin: 0.8em;
+    background-color: #ffffb3;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.row {
+    text-align: left;
+}
+.first{
+    color: green;
+    display: inline;
+    text-align: left;
+}
+.second{
+    font-size: 2em;
+    display: inline;
+}
+aside {
+    display: inline-block;
+    float: left;
+}
+footer {
+    padding: 1em;
+}
+footer > p {
+    font-size: 2em;
+}
