@@ -1,4 +1,7 @@
 @import '_theme-blue';
+@import '_mixins';
+@import '_panel';
+@import '_table';
 
 body , body * {
 	font-family: Helevetica, sans-serif;
@@ -6,6 +9,3 @@ body , body * {
 h3 {
 	font-size: 1.8em;
 }
-@import '_mixins';
-@import '_panel';
-@import '_table';
