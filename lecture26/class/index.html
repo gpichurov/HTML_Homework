@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(document).ready(function() {
+                console.log(Date.now())
+            });
+
+            $(function() {
+                console.log(Date.now());
+            });
+
+            $(function() {
+                var firstVal = $('div').attr('data-value');
+                //$('div:odd()').attr('data-test', 'Test');
+                $('div:even()').attr({
+                    'data-test':'Test',
+                    'data-test-1':'Test 1'
+                });
+
+                console.log($('div')
+                        .html('<p>Test I</p>')
+                        .find('p')
+                        .css('border', '1px solid green')
+                        .end()
+                        .attr('test', 'test'));
+            });
+
+        })(jQuery)
+    </script>
+</head>
+<body>
+    <div data-value="1">Test 1</div>
+    <div data-value="2">Test 2</div>
+    <div data-value="3">Test 3</div>
+</body>
+</html>

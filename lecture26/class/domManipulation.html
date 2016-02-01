@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn {
+            color: red;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript">
+        (function($) {
+
+            function createNonExisting(){
+
+            };
+
+            $(function() {
+                console.log($('<p>Test 1</p>').appendTo('#container'));
+                console.log($('#container').append('<p>Test 2</p>'));
+                $('#container').css({
+                    border: '1px solid gray',
+                    "background-color" : 'yellow'
+                });
+
+                $('#btn-draw')
+                        .addClass('btn')
+                        .on('click', function() {
+                            console.log($('#container').append('<p class="non-existing">Test 3</p>'));
+                            $('#container').css({
+                                border: '1px solid gray',
+                                "background-color" : 'yellow'
+                            })
+                        });
+
+                $('#btn-delete').on('click', function name() {
+                    $('#container p:first-child').remove();
+                });
+
+                $('#clear-all').on('click', function name() {
+                    $('#container').empty();
+                });
+
+//                $('#container').delegate('.non-existing', 'click', function() {
+//                    $(this).css({
+//                        'color' : 'red',
+//                        'background-color' : 'blue'
+//                    })
+//                });
+
+                $('#container').on('.non-existing', 'click', function() {
+                    $(this).css({
+                        'color' : 'red',
+                        'background-color' : 'blue'
+                    })
+                })
+
+                $('#ajax').on('click', function(){
+                    $.ajax({
+                        'url' : 'server.php',
+                        'method' : 'GET',
+
+                    })
+                })
+            })
+        })(jQuery)
+    </script>
+</head>
+<body>
+    <button id="btn-draw">Draw</button>
+    <button id="btn-delete">Delete</button>
+    <button id="clear-all">Clear All</button>
+    <button id="ajax">Ajax</button>
+    <div id="container">Test</div>
+</body>
+</html>

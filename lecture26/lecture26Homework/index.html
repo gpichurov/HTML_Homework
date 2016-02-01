@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>brrrrrrrr</title>
+    <link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<main class="container-fluid panel">
+    <div class="page-header text-center">
+        <h3></h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" role="form" action="" method="post" onsubmit="event.preventDefault(); validate()">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="carName">Car Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="carName" name="carName" placeholder="Enter car name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="carModel">Car Model:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="carModel" name="carModel" placeholder="Enter car model">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="year">Year of produce:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="year" name="year" placeholder="Enter year of produce">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="kilometers">Kilometers:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="kilometers" name="kilometers" placeholder="Enter kilometers">
+                </div>
+            </div>
+
+            <p id="validate"></p>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="col-sm-2">#</th>
+                    <th class="col-sm-2">Car Name</th>
+                    <th class="col-sm-2">Car Model</th>
+                    <th class="col-sm-2">Year of produce</th>
+                    <th class="col-sm-2">Kilometers</th>
+                    <th class="col-sm-2">Tools</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>

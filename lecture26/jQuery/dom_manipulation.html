@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+.btn {
+	color: blue;
+}
+</style>
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+
+function callback(data) {
+	var number = !isNaN(data.number) ? data.number: 1;
+	for (var i = 0; i < number; i++) {
+		createNonExisting();
+	}
+}
+
+function createNonExisting() {
+	$('#container').append($('<p class="non-existing">Test 1</p>'));
+	$('#container').css({
+		border: '1px solid gray',
+		"background-color": 'yellow'
+	})
+}
+(function($){
+
+	
+	$(function() {
+		console.log($('<p>Test 1</p>').appendTo('#container'));
+		
+		console.log($('#container').append($('<p>Test 1</p>')));
+
+		$('#container').css({
+			border: '1px solid gray',
+			"background-color": 'yellow'
+		})
+		
+		$('#btn-draw')
+			.addClass('btn')
+			.on('click', function() {
+				createNonExisting()
+			});
+		
+		$('#btn-delete').on('click', function name() {
+			$('#container p:first-child').remove()
+		})
+		
+		$('#clear-all').on('click', function name() {
+			$('#container').empty();
+		})
+		
+		/* $('#container').delegate('.non-existing', 'click', function() {
+			$(this).css({
+				'color' : 'red',
+				'background-color' : 'green'
+			});
+		}) */
+		
+		$('#container').on('click', '.non-existing', function() {
+			$(this).css({
+				'color' : 'red',
+				'background-color' : 'green'
+			});
+		});
+		
+		$('#ajax').on('click', function() {
+			$.ajax({
+				'url' : 'server.php',
+				'method': 'GET',
+				'dataType': 'json'
+			}).done(function(data) {
+				var number = !isNaN(data.number) ? data.number: 1;
+				for (var i = 0; i < number; i++) {
+					createNonExisting();
+				}
+			});
+			
+			$.ajax({
+				'url':'server.php', 
+				'jsonp': 'callback',
+				'dataType': 'jsonp',
+				'success': function() {
+					console.log(arguments)
+				}
+			})
+		});
+		
+		$('#load-btn').on('click', function() {
+			console.log($('#load-result'));
+			$('#load-result').load('html_server.php')
+		})
+	});
+	
+	
+	
+})(jQuery)
+</script>
+</head>
+<body>
+	<button id="btn-draw">Draw</button>
+	<button id="btn-delete">Delete</button>
+	<button id="clear-all">Clear</button>
+	<button id="ajax">Send Request</button>
+	
+	<button id="load-btn">Load Result</button>
+	
+	<div id="container"></div>
+	<p id="outer-p">Outer P</p>
+	
+	<div id="load-result"></div>
+</body>
+</html>
