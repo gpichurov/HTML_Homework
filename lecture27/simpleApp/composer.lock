@@ -1,0 +1,109 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "b9e3cd51c1d94379bc45b2d3d93a510c",
+    "content-hash": "bd36f834ed3cc0bbbacc17b8dd32d9bd",
+    "packages": [
+        {
+            "name": "bashibozuk/httpstub",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bashibozuk/HttpStub.git",
+                "reference": "c8c8bcd8d9a43c2f5085d4a97a29300cf4da08f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bashibozuk/HttpStub/zipball/c8c8bcd8d9a43c2f5085d4a97a29300cf4da08f1",
+                "reference": "c8c8bcd8d9a43c2f5085d4a97a29300cf4da08f1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HttpStub\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vasil Atanasov",
+                    "email": "vsatanasov@gmail.com"
+                }
+            ],
+            "description": "rest http stub server with document-like key value json based storage",
+            "support": {
+                "source": "https://github.com/bashibozuk/HttpStub/tree/master",
+                "issues": "https://github.com/bashibozuk/HttpStub/issues"
+            },
+            "time": "2016-01-27 08:33:30"
+        },
+        {
+            "name": "twbs/bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "eb8cb2158a38de31e6f3ab8a669cb80c3fa93df4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/eb8cb2158a38de31e6f3ab8a669cb80c3fa93df4",
+                "reference": "eb8cb2158a38de31e6f3ab8a669cb80c3fa93df4",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2016-01-26 20:38:46"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

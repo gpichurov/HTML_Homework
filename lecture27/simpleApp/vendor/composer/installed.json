@@ -1,0 +1,96 @@
+[
+    {
+        "name": "bashibozuk/httpstub",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bashibozuk/HttpStub.git",
+            "reference": "c8c8bcd8d9a43c2f5085d4a97a29300cf4da08f1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bashibozuk/HttpStub/zipball/c8c8bcd8d9a43c2f5085d4a97a29300cf4da08f1",
+            "reference": "c8c8bcd8d9a43c2f5085d4a97a29300cf4da08f1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "time": "2016-01-27 08:33:30",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "HttpStub\\": ""
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Vasil Atanasov",
+                "email": "vsatanasov@gmail.com"
+            }
+        ],
+        "description": "rest http stub server with document-like key value json based storage",
+        "support": {
+            "source": "https://github.com/bashibozuk/HttpStub/tree/master",
+            "issues": "https://github.com/bashibozuk/HttpStub/issues"
+        }
+    },
+    {
+        "name": "twbs/bootstrap",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twbs/bootstrap.git",
+            "reference": "eb8cb2158a38de31e6f3ab8a669cb80c3fa93df4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twbs/bootstrap/zipball/eb8cb2158a38de31e6f3ab8a669cb80c3fa93df4",
+            "reference": "eb8cb2158a38de31e6f3ab8a669cb80c3fa93df4",
+            "shasum": ""
+        },
+        "replace": {
+            "twitter/bootstrap": "self.version"
+        },
+        "time": "2016-01-26 20:38:46",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jacob Thornton",
+                "email": "jacobthornton@gmail.com"
+            },
+            {
+                "name": "Mark Otto",
+                "email": "markdotto@gmail.com"
+            }
+        ],
+        "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+        "homepage": "http://getbootstrap.com",
+        "keywords": [
+            "JS",
+            "css",
+            "framework",
+            "front-end",
+            "less",
+            "mobile-first",
+            "responsive",
+            "web"
+        ]
+    }
+]

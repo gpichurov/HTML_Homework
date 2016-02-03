@@ -1,0 +1,26 @@
+{
+    "name": "ittalents/composer-demo",
+    "description": "Composer Demo",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ITTalents",
+            "email": "office@ittalents.bg"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url" : "https://github.com/bashibozuk/HttpStub"
+        }
+    ],
+    "require": {
+        "bashibozuk/httpstub":"master",
+        "twbs/bootstrap": "^3.3"
+    },
+    "autoload": {
+        "psr-4": { "HttpStub\\" : "bashibozuk/httpstub"}
+    }
+}
