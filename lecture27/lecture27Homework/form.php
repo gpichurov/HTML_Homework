@@ -4,7 +4,11 @@ require_once __DIR__ . '/config.php';
 require_once 'functions.php';
 
 $blogDate = date("d.m.Y H:i");
-$storage = new FileStorage('blogs');
+$blogsStorage = new FileStorage('blogs');
+
+$subjectsStorage = new FileStorage('subjects');
+$subjects = $subjectsStorage->readAll();
+
 $data = [];
 
 $errors = [];
@@ -19,11 +23,8 @@ if ($_POST) {
     }
 
     if (!$errors) {
-        if ($key) {
-            $storage->update($key, $data);
-        } else {
-            $storage->insert($data);
-        }
+
+        $blogsStorage->insert($data);
 
         header('Location: blogs.php');
         die;
@@ -43,6 +44,8 @@ $data = (array)$data;
     <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css">
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
 </head>
 <body class="container-fluid">
 <nav class="navbar navbar-default">
@@ -81,13 +84,20 @@ $data = (array)$data;
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-1" for="subject">Subject:</label>
-                <div class="col-sm-10">
-                    <select class="form-control" name="subject" id="subject">
+                <div class="col-sm-3">
+                    <select class="form-control" id="subject" name="subject">
                         <option value="economy">Economy</option>
                         <option value="politics">Politics</option>
                         <option value="sport">Sport</option>
                         <option value="programing">Programing</option>
+                        <?php
+                        foreach ($subjects as $key => $subject):?>
+                            <option><?= $subject['subject'] ?></option>
+                        <?php endforeach;?>
                     </select>
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn" type="button" id="addSubject" onclick="addNewSubject()">Add new subject</button>
                 </div>
             </div>
             <div class="form-group hidden">

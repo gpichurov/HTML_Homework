@@ -11,12 +11,7 @@ $subjects = $subjectsStorage->readAll();
 $storage = new FileStorage('blogs');
 $data = $storage->readAll();
 
-$k = array_keys($data);
-$v = array_values($data);
-$rk = array_reverse($k);
-$rv = array_reverse($v);
-
-$dataRev = array_combine($rk, $rv);
+krsort($data);
 
 $subject = getValue($_GET, 'subject', 'all');
 ?>
@@ -50,7 +45,7 @@ $subject = getValue($_GET, 'subject', 'all');
     <div class="panel-body">
         <div class=" col-sm-8 col-sm-offset-1 list-group">
             <?php
-            foreach ($dataRev as $key => $blog):?>
+            foreach ($data as $key => $blog):?>
                 <?php if (($subject === 'all') || ($subject === $blog['subject'])):?>
                 <a href="read.php?key=<?= $key ?>" class="list-group-item">
                     <h3><?= $blog['title'] ?></h3>
@@ -73,6 +68,12 @@ $subject = getValue($_GET, 'subject', 'all');
                 <a href="blogs.php?subject=politics" class="list-group-item">Politics</a>
                 <a href="blogs.php?subject=sport" class="list-group-item">Sport</a>
                 <a href="blogs.php?subject=programing" class="list-group-item">Programing</a>
+                <?php
+                foreach ($subjects as $key => $subject):?>
+                        <a href="blogs.php?subject=<?= $key ?>" class="list-group-item">
+                            <?= $subject['subject'] ?></a>
+                        </a>
+                <?php endforeach;?>
             </div>
         </div>
     </div>
