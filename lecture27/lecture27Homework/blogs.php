@@ -8,6 +8,7 @@ $dataExist = false;
 
 $subjectsStorage = new FileStorage('subjects');
 $subjects = $subjectsStorage->readAll();
+var_dump($subjects);
 $storage = new FileStorage('blogs');
 $data = $storage->readAll();
 
@@ -70,7 +71,7 @@ $subject = getValue($_GET, 'subject', 'all');
                 <a href="blogs.php?subject=programing" class="list-group-item">Programing</a>
                 <?php
                 foreach ($subjects as $key => $subject):?>
-                        <a href="blogs.php?subject=<?= $key ?>" class="list-group-item">
+                        <a href="blogs.php?subject=<?= $subject['subject'] ?>" class="list-group-item">
                             <?= $subject['subject'] ?></a>
                         </a>
                 <?php endforeach;?>
