@@ -8,7 +8,7 @@ $dataExist = false;
 
 $subjectsStorage = new FileStorage('subjects');
 $subjects = $subjectsStorage->readAll();
-var_dump($subjects);
+
 $storage = new FileStorage('blogs');
 $data = $storage->readAll();
 
