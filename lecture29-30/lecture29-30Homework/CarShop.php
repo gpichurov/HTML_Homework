@@ -4,10 +4,6 @@ class CarShop
 {
     private $cars = [];
 
-    /**
-     * CarShop constructor.
-     * @param array $cars
-     */
     public function __construct()
     {
         $this->cars = func_get_args();
@@ -31,12 +27,12 @@ class CarShop
         }
     }
 
-    public function sellNextCar($buyer)
+    public function sellNextCar(Person $buyer)
     {
         $buyer->buyCar(prev($this->cars));
     }
 
-    public function removeCar($car)
+    public function removeCar(Car $car)
     {
         unset($this->cars[key($this->cars)]);
         $this->cars = array_values($this->cars);

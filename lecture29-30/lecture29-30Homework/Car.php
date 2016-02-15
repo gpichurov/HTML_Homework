@@ -171,7 +171,7 @@ class Car
         return $metalPrice * $coef;
     }
 
-    public function changeOwner($newOwner)
+    public function changeOwner(Person $newOwner)
     {
         $this->owner = $newOwner;
     }
