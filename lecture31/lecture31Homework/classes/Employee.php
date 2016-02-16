@@ -22,14 +22,51 @@ class Employee
      */
     protected $allWork;
 
+    /**
+     * Employee constructor.
+     * @param string $name
+     */
+    public function __construct($name, AllWork $allWork)
+    {
+        $this->name = $name;
+        $this->allWork = $allWork;
+    }
+
     public function work()
     {
+        if ($this->allWork->isAllWorkDone()) {
+            return ;
+        }
+        if ($this->hoursLeft == 0) {
+            $this->startWorkingDay();
+        }
 
+        if ((!(array)$this->getCurrentTask())) {
+            $this->setCurrentTask($this->allWork->getNextTask());
+        }
+
+        if ($this->currentTask->getWorkingHours() >= $this->hoursLeft) {
+            echo $this->name . ' is working on task ' . $this->currentTask->getName() .
+                ' for ' . $this->hoursLeft . ' hours.' . PHP_EOL;
+
+            $this->currentTask->setWorkingHours($this->currentTask->getWorkingHours() - $this->hoursLeft);
+            $this->hoursLeft = 0;
+        } else {
+            echo $this->name . ' is working on task ' . $this->currentTask->getName() .
+                ' for ' . $this->currentTask->getWorkingHours() . ' hours.' . PHP_EOL;
+
+            $this->hoursLeft = $this->hoursLeft - $this->currentTask->getWorkingHours();
+            $this->setCurrentTask(null);
+        }
+
+        if ($this->hoursLeft > 0) {
+            $this->work();
+        }
     }
 
     public function startWorkingDay()
     {
-
+        $this->hoursLeft = 8;
     }
 
     /**
@@ -54,6 +91,7 @@ class Employee
     public function setCurrentTask($currentTask)
     {
         $this->currentTask = $currentTask;
+        echo 'Assigning task ' . $this->currentTask->getName() . ' to ' . $this->name . PHP_EOL;
     }
 
     /**

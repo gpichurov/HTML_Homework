@@ -5,7 +5,7 @@ class AllWork
     /**
      * @var Task[]
      */
-    protected $tasks = [];
+    protected $tasks;
 
     /**
      * @var int
@@ -19,11 +19,10 @@ class AllWork
 
     /**
      * AllWork constructor.
-     * @param Task[]
      */
     public function __construct()
     {
-        $this->tasks = func_get_args();
+        $this->tasks = [];
         $this->freePlacesForTasks = 10;
         $this->currentUnassignedTask = 0;
     }
@@ -31,18 +30,31 @@ class AllWork
     /**
      * @param $task
      */
-    public function addTask($task)
+    public function addTask(Task $task)
     {
-        array_push($this->tasks, $task);
+        if ($this->freePlacesForTasks > 0) {
+            array_push($this->tasks, $task);
+            $this->freePlacesForTasks--;
+            echo $task->getName() . ' has been added to the tasks!' . PHP_EOL;
+        } else {
+            echo 'Tasks are full!' . PHP_EOL;
+        }
     }
 
     public function getNextTask()
     {
-
+        $result = $this->tasks[$this->currentUnassignedTask];
+        $this->currentUnassignedTask++;
+        return $result;
     }
 
     public function isAllWorkDone()
     {
-
+        if ($this->currentUnassignedTask >= count($this->tasks)) {
+            echo 'No more tasks !!!';
+            return true;
+        } else {
+            return false;
+        }
     }
 }
