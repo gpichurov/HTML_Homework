@@ -1,7 +1,3 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: georgi
- * Date: 11.02.16
- * Time: 16:42
- */
+
+require_once 'autoload.php';

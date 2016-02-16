@@ -51,12 +51,14 @@ require_once 'autoload.php';
 $car11 = new Car('Mazda', true, 'brown', 50000, 350);
 $car12 = new Car('Suzuki', true, 'blue', 40000, 300);
 $car13 = new Car('Hyundai', false, 'pink', 30000, 250);
+$car14 = new Car('Mazda', true, 'brown', 50000, 350);
 
 $buyer1 = new Person('Georgi', 8956456231, true);
 $buyer1->setMoney(50000);
 
 $carShop = new CarShop($car11, $car12);
 $carShop->addCar($car13);
+$carShop->addCar($car14);
 
 print_r($carShop->getNextCar());
 $carShop->sellNextCar($buyer1);
