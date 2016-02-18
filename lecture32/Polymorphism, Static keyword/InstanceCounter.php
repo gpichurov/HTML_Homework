@@ -25,6 +25,5 @@ new InstanceCounter();
 new InstanceCounter();
 new InstanceCounter();
 new InstanceCounter();
-new InstanceCounter();
 
 var_dump(InstanceCounter::getInstancesCount());

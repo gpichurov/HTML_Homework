@@ -37,7 +37,9 @@ $e3 = new Employee("Tina", $allWork);
 $moreWork1 = false;
 $moreWork2 = false;
 $moreWork3 = false;
+
 $days = 1;
+
 while(!$moreWork1 || !$moreWork2 || !$moreWork3) {
     echo 'Start working day number ' . $days . PHP_EOL;
     $days++;
