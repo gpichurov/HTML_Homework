@@ -48,10 +48,18 @@ class AllWork
         return $result;
     }
 
+    /**
+     * @return int
+     */
+    public function getCurrentUnassignedTask()
+    {
+        return $this->currentUnassignedTask;
+    }
+
     public function isAllWorkDone()
     {
         if ($this->currentUnassignedTask >= count($this->tasks)) {
-            echo 'No more tasks !!!';
+            //echo 'No more tasks !!!' . PHP_EOL;
             return true;
         } else {
             return false;

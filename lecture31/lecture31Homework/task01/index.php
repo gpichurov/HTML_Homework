@@ -12,8 +12,8 @@ $t7 = new Task("Task 7", 18);
 $t8 = new Task("Task 8", 2);
 $t9 = new Task("Task 9", 3);
 $t10 = new Task("Task 10", 2);
-$t11 = new Task("Task 10", 2);
-$t12 = new Task("Task 10", 2);
+$t11 = new Task("Task 11", 2);
+$t12 = new Task("Task 12", 2);
 
 $allWork = new AllWork();
 
@@ -34,13 +34,14 @@ $e1 = new Employee("Ivan", $allWork);
 $e2 = new Employee("Niki", $allWork);
 $e3 = new Employee("Tina", $allWork);
 
+$moreWork1 = false;
+$moreWork2 = false;
+$moreWork3 = false;
 $days = 1;
-do {
+while(!$moreWork1 || !$moreWork2 || !$moreWork3) {
     echo 'Start working day number ' . $days . PHP_EOL;
     $days++;
-    $e1->work();
-    $e2->work();
-    $e3->work();
-} while(!$allWork->isAllWorkDone());
-
-//var_dump($allWork);
+    $moreWork1 = $e1->work();
+    $moreWork2 = $e2->work();
+    $moreWork3 = $e3->work();
+}

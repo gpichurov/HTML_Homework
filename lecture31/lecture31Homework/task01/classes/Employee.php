@@ -34,14 +34,16 @@ class Employee
 
     public function work()
     {
-        if ($this->allWork->isAllWorkDone()) {
-            return ;
+        if ($this->allWork->isAllWorkDone() && $this->currentTask->getWorkingHours() == 0) {
+            echo 'No more tasks !!!' . PHP_EOL;
+            return true;
         }
+
         if ($this->hoursLeft == 0) {
             $this->startWorkingDay();
         }
 
-        if ((!(array)$this->getCurrentTask())) {
+        if ((!$this->getCurrentTask())) {
             $this->setCurrentTask($this->allWork->getNextTask());
         }
 
@@ -56,7 +58,11 @@ class Employee
                 ' for ' . $this->currentTask->getWorkingHours() . ' hours.' . PHP_EOL;
 
             $this->hoursLeft = $this->hoursLeft - $this->currentTask->getWorkingHours();
-            $this->setCurrentTask(null);
+            $this->currentTask->setWorkingHours('0');
+
+            if (!$this->allWork->isAllWorkDone()) {
+                $this->setCurrentTask($this->allWork->getNextTask());
+            }
         }
 
         if ($this->hoursLeft > 0) {
