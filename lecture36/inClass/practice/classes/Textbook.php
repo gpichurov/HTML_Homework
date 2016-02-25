@@ -4,9 +4,9 @@ class Textbook extends Allbooks
 {
     private $author;
 
-    public function __construct($number, $title, $date, $publisher, $genre, $author)
+    public function __construct($title, $date, $publisher, $genre, $author)
     {
-        parent::__construct($number, $title, $date, $publisher, $genre);
+        parent::__construct($title, $date, $publisher, $genre);
         $this->author = $author;
     }
 

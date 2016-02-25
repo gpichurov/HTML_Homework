@@ -6,6 +6,20 @@ class Library
 
     private $allReaders = [];
 
+    private $reader;
+
+    private $whenGet;
+
+    private $whenReturned;
+
+    public function addBook($book)
+    {
+        array_push($this->allBooks, $book);
+    }
+    public function addBooks()
+    {
+        $this->allBooks = func_get_args();
+    }
     /**
      * @return array
      */

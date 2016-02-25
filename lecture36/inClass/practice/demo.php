@@ -2,7 +2,10 @@
 
 require_once 'autoload.php';
 
-$book1 = new Book('test', '20.12.1999', 'Publisher', 'Genre', 'Author', 'cover');
-$book2 = new Book('test', '20.12.1999', 'Publisher', 'Genre', 'Author', 'cover');
+$library = new Library();
 
-var_dump($book1, $book2);
+$book1 = new Book('test', '20.12.1999', 'Publisher', 'Genre', 'Author', 'cover');
+$magazine1 = new Magazine('test', '20.12.1999', 'Publisher', 'Genre', '1');
+$textbook1 = new Textbook('test', '20.12.1999', 'Publisher', 'Genre', 'Author');
+
+var_dump($book1, $magazine1, $textbook1);

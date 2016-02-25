@@ -1,8 +1,8 @@
 <?php
 
-class Reader
+class ReaderCard
 {
-    private $number;
+    private $number = 0;
 
     private $name;
 
@@ -12,13 +12,12 @@ class Reader
 
     /**
      * Reader constructor.
-     * @param $number
      * @param $name
      * @param $date
      */
-    public function __construct($number, $name, $date)
+    public function __construct($name, $date)
     {
-        $this->number = $number;
+        $this->number++;
         $this->name = $name;
         $this->date = $date;
     }

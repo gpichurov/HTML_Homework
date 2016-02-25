@@ -4,9 +4,9 @@ class Magazine extends Allbooks
 {
     private $magazineNumber;
 
-    public function __construct($number, $title, $date, $publisher, $genre, $magazineNumber)
+    public function __construct($title, $date, $publisher, $genre, $magazineNumber)
     {
-        parent::__construct($number, $title, $date, $publisher, $genre);
+        parent::__construct($title, $date, $publisher, $genre);
         $this->magazineNumber = $magazineNumber;
     }
 

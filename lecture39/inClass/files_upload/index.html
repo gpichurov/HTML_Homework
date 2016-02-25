@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <input type="file" name="file" multiple="multiple" accept="image/*">
+        </div>
+        <div>
+            <input type="submit" value="send">
+        </div>
+    </form>
+</body>
+</html>
