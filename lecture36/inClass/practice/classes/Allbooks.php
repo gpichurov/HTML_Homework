@@ -12,7 +12,9 @@ abstract class Allbooks
 
     private $genre;
 
-    private $status;
+    private $status = true;
+
+    private $history;
 
     /**
      * Allbooks constructor.
@@ -28,6 +30,7 @@ abstract class Allbooks
         $this->date = $date;
         $this->publisher = $publisher;
         $this->genre = $genre;
+        $this->history = [];
     }
 
     /**
@@ -116,6 +119,28 @@ abstract class Allbooks
     public function setStatus($status)
     {
         $this->status = $status;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHistory()
+    {
+        return $this->history;
+    }
+
+    public function getBook($dateGet, $reader)
+    {
+        $a = ['dateGet' => $dateGet,
+            'reader' => $reader,
+            'dateReturn' => 'NO'];
+        $this->history[] = $a;
+    }
+
+    public function returnBook($dateReturn)
+    {
+        $this->history[count($this->history) - 1]['dateReturn'] = $dateReturn;
+
     }
 
 }

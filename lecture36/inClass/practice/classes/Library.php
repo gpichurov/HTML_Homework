@@ -52,4 +52,40 @@ class Library
         array_push($this->allReaders, $reader);
     }
 
+    public function addAllReaders($reader)
+    {
+        $this->allReaders = func_get_args();
+    }
+
+    public function display()
+    {
+        foreach ($this->allBooks as $k => $v) {
+            print_r($this->allBooks[$k]);
+        }
+    }
+
+    /**
+     * @param Allbooks $book
+     * @param $reader
+     * @param $date
+     */
+    public function rentBook($book,ReaderCard $reader, $date)
+    {
+        if ($book->getStatus()) {
+            $book->setStatus(false);
+            $book->getBook($date, $reader);
+            $reader->getBook($book, $date);
+        }
+
+    }
+
+    /**
+     * @param  $book
+     * @param $date
+     */
+    public function returnBook($book, $date)
+    {
+        $book->setStatus(true);
+        $book->returnBook($date);
+    }
 }

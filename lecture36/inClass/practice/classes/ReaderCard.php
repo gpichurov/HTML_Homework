@@ -8,7 +8,7 @@ class ReaderCard
 
     private $date;
 
-    private $booksTaken = [];
+    private $booksTakenList;
 
     /**
      * Reader constructor.
@@ -20,6 +20,7 @@ class ReaderCard
         $this->number++;
         $this->name = $name;
         $this->date = $date;
+        $this->booksTakenList = [];
     }
 
     /**
@@ -73,16 +74,27 @@ class ReaderCard
     /**
      * @return array
      */
-    public function getBooksTaken()
+    public function getBooksTakenList()
     {
-        return $this->booksTaken;
+        return $this->booksTakenList;
     }
 
     /**
-     * @param array $bookTaken
+     * @param array Allbooks $bookTaken
      */
-    public function addBookTaken($bookTaken)
+    public function getBook($bookTaken, $date)
     {
-        array_push($this->booksTaken, $bookTaken);
+        $a = [
+            'book' => $bookTaken,
+            'dateGet' => $date,
+            'when to return' => $date,
+            'status' => $bookTaken->getStatus()
+        ];
+        $this->booksTakenList[] = $a;
+    }
+
+    public function returnBook($date)
+    {
+
     }
 }
