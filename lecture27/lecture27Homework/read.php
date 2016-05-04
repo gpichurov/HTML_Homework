@@ -6,7 +6,7 @@ require_once 'functions.php';
 $storage = new FileStorage('blogs');
 
 $key = getValue($_GET, 'key', 0);
-
+var_dump($key);
 $data = $storage->read($key);
 ?>
 <!DOCTYPE html>
