@@ -4,7 +4,6 @@
 
 var Ajax = {
 		/**
-		 * 
 		 * @returns XMLHttpRequest
 		 */
 		getXHR: function() {
